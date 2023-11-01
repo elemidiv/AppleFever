@@ -3,14 +3,15 @@ using UnityEngine;
 public class AppleStats : MonoBehaviour
 {
     private BasketLogic _basketLogic;
+    private Rigidbody2D _rb2D;
 
     //Stats
-    private Rigidbody2D _rb2D;
     [SerializeField] private float _gravity = 1f;
-    [SerializeField] private int _type; 
+    [SerializeField] private int _moneyValue;
+    [SerializeField] private int _moodLoss;
     
 
-    void Start()
+    void Awake()
     {
         _basketLogic = FindObjectOfType<BasketLogic>();
 
@@ -28,21 +29,21 @@ public class AppleStats : MonoBehaviour
         if (!collision.CompareTag("Basket"))
             return;
 
-        if (_type == 2)
-            _basketLogic.Apple2++;
-        else if (_type == 1)
-            _basketLogic.Apple1++;
-
+        _basketLogic.Money+= _moneyValue;
         Destroy();
     }
 
     private void LostApple()
     {
-        if (transform.position.y <= -7)
-        {
-            _basketLogic.Mood -= Random.Range(5, 11);
-            Destroy();
-        }
+        if (transform.position.y >= -7)
+            return;
+
+        if (_basketLogic.Resistance >= _moodLoss)
+            _basketLogic.Mood -= 1;
+        else
+            _basketLogic.Mood -= _moodLoss - _basketLogic.Resistance;
+
+        Destroy();
     }
 
     private void Destroy()

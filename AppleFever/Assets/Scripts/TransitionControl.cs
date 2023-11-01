@@ -1,32 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class TransitionControl : MonoBehaviour
 {
-    private UnloadLogic UnloadLogic;
+    private BasketLogic _basketLogic;
 
-    void Start()
+    private void Start()
     {
-        UnloadLogic = FindObjectOfType<UnloadLogic>();
-    }
-
-
-    void Update()
-    {
-        
+        _basketLogic = FindObjectOfType<BasketLogic>();
     }
 
     public void GameOver()
     {
-        UnloadLogic.SaveApples();
-
-        SceneManager.LoadScene("Shop");
-    }
-
-    public void StartGame()
-    {
-        SceneManager.LoadScene("Game");
+        PlayerPrefs.SetInt("Coin", _basketLogic.Money);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

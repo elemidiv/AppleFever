@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BadApple : MonoBehaviour
@@ -7,9 +6,6 @@ public class BadApple : MonoBehaviour
     private BasketLogic _basketLogic;
 
     private Rigidbody2D _rb2D;
-    public float Gravity = 2f;
-
-    private int _harmApples;
     [SerializeField] private GameObject _warning;
 
 
@@ -32,14 +28,7 @@ public class BadApple : MonoBehaviour
     {
         if (collision.CompareTag("Basket"))
         {
-            _basketLogic.Mood -= 25;
-            _harmApples = Random.Range(1, 5);
-
-            if (_harmApples <= _basketLogic.Apple1)
-                _basketLogic.Apple1 -= _harmApples;
-            else if (_basketLogic.Apple1 == 0)
-                Destroy();
-            else _basketLogic.Apple1--;
+            _basketLogic.Mood -= 15;
             Destroy();
         }
     }
