@@ -4,6 +4,7 @@ using UnityEngine;
 public class BadApple : MonoBehaviour
 {
     private BasketLogic _basketLogic;
+    private AudioSource _sound;
 
     private Rigidbody2D _rb2D;
     [SerializeField] private GameObject _warning;
@@ -12,6 +13,7 @@ public class BadApple : MonoBehaviour
     void Start()
     {
         _basketLogic = FindObjectOfType<BasketLogic>();
+        _sound = GameObject.Find("Sound_BadApple").GetComponent<AudioSource>();
 
         _rb2D = GetComponent<Rigidbody2D>();
         _rb2D.gravityScale = 0;
@@ -28,6 +30,7 @@ public class BadApple : MonoBehaviour
     {
         if (collision.CompareTag("Basket"))
         {
+            _sound.Play();
             _basketLogic.Mood -= 15;
             Destroy();
         }

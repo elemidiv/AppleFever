@@ -72,6 +72,9 @@ public class BasketLogic : MonoBehaviour
     /// </summary>
     private void MoodStatus()
     {
+        if (_isDead)
+            return;
+
         if (Mood < _maxMood)
             Mood += _regeneration * Time.deltaTime/10;
 
@@ -142,7 +145,7 @@ public class BasketLogic : MonoBehaviour
     private void Death()
     {
         _isDead = true;
-
-        TransitionControl.GameOver();
+        
+        StartCoroutine(TransitionControl.GameOver());
     }
 }
