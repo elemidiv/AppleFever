@@ -11,6 +11,7 @@ public class TransitionControl : MonoBehaviour
     private void Start()
     {
         _basketLogic = FindObjectOfType<BasketLogic>();
+        Time.timeScale = 1f;
     }
 
     public IEnumerator GameOver()
