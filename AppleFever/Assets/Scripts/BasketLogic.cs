@@ -21,6 +21,7 @@ public class BasketLogic : MonoBehaviour
 
     //Movement
     private Vector2 _newPosition;
+    private Touch _poke;
     private SpriteRenderer _sprite;
     private Animator _animatorPlayer;
     
@@ -112,12 +113,20 @@ public class BasketLogic : MonoBehaviour
         if (_isDead)
             return;
 
-        if(transform.position.x <= _camera.ScreenToWorldPoint(Input.mousePosition).x + 0.11f && transform.position.x >= _camera.ScreenToWorldPoint(Input.mousePosition).x - 0.03f)
+        if (Input.touchCount > 0)
+            _poke = Input.GetTouch(0);
+        else
+        {
+            _animatorPlayer.SetBool("Walking", false);
+            return;
+        }
+
+        if(transform.position.x <= _camera.ScreenToWorldPoint(_poke.position).x + 0.11f && transform.position.x >= _camera.ScreenToWorldPoint(_poke.position).x - 0.03f)
         {
             _animatorPlayer.SetBool("Walking", false);
         }
 
-        if (transform.position.x > -5 && transform.position.x > _camera.ScreenToWorldPoint(Input.mousePosition).x + 0.1f)
+        if (transform.position.x > -5 && transform.position.x > _camera.ScreenToWorldPoint(_poke.position).x + 0.1f)
         {
             _newPosition.x -= _speed * Time.deltaTime;
             _newPosition.y = transform.position.y;
@@ -127,7 +136,7 @@ public class BasketLogic : MonoBehaviour
             _animatorPlayer.SetBool("Walking", true);
         }
 
-        if (transform.position.x < 7 && transform.position.x < _camera.ScreenToWorldPoint(Input.mousePosition).x)
+        if (transform.position.x < 7 && transform.position.x < _camera.ScreenToWorldPoint(_poke.position).x)
         {
             _newPosition.x += _speed * Time.deltaTime;
             _newPosition.y = transform.position.y;

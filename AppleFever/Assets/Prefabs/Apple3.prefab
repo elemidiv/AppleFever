@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3991093057527952174}
   - component: {fileID: 3991093057527952170}
   m_Layer: 0
-  m_Name: Apple2
+  m_Name: Apple3
   m_TagString: Apple
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 3211865404380153573, guid: 6e8de8a66e5367946a1269b700c76916, type: 3}
+  m_Sprite: {fileID: 4808522734667448011, guid: 6e8de8a66e5367946a1269b700c76916, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -144,6 +144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f7607e6d0a61749b95211743659cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gravity: 0.12
-  _moneyValue: 9
-  _moodLoss: 8
+  _gravity: 0.16
+  _moneyValue: 15
+  _moodLoss: 6

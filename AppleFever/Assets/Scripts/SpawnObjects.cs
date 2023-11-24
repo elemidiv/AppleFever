@@ -50,10 +50,12 @@ public class SpawnObjects : MonoBehaviour
         _reposition.y = 8f;
         _nextApple = Random.Range(0, 101);
 
-        if (_nextApple > 30)
+        if (_nextApple < 70)
             _newObj = Instantiate(_appleType[1]);
-        else if (_nextApple < 30)
+        else if (_nextApple >= 70 && _nextApple < 95)
             _newObj = Instantiate(_appleType[2]);
+        else if (_nextApple >= 95)
+            _newObj = Instantiate(_appleType[3]);
 
         _newObj.transform.position = _reposition;
         _newObj.GetComponent<Rigidbody2D>().gravityScale += _gravity;
@@ -65,8 +67,8 @@ public class SpawnObjects : MonoBehaviour
             _count = 0;
             _badAppleMax--;
             _gravity += 0.04f;
-            if (_min > 0.1) _min -= 0.04f;
-            if (_max > 1) _max -= 0.06f;
+            if (_min > 0.1) _min -= 0.03f;
+            if (_max > 1) _max -= 0.05f;
         }
 
         _ableToSpawn = true;
