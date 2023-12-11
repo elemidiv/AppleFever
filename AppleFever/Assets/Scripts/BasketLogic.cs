@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,7 @@ public class BasketLogic : MonoBehaviour
     private float _speed;
     private float _regeneration;
     private float _maxMood;
+    [HideInInspector] public float _timer;
 
     //Hud
     private Image _moodSprite;
@@ -57,6 +59,8 @@ public class BasketLogic : MonoBehaviour
         Text.text = "" + Mood;
         Movement();
         MoodStatus();
+
+        _timer += 1 * Time.deltaTime;
     }
 
     public void GetStatistics()
@@ -147,6 +151,12 @@ public class BasketLogic : MonoBehaviour
         }
     }
 
+    public IEnumerator Timer()
+    {
+
+
+        yield return null;
+    }
 
     /// <summary>
     /// Actions that excecute when the player dies
@@ -154,6 +164,9 @@ public class BasketLogic : MonoBehaviour
     private void Death()
     {
         _isDead = true;
+
+        if (_timer > PlayerPrefs.GetInt("timer", 0))
+            PlayerPrefs.SetInt("timer", ((int)_timer));
         
         StartCoroutine(TransitionControl.GameOver());
     }

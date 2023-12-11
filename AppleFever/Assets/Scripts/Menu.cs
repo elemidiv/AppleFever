@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Menu : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class Menu : MonoBehaviour
     [SerializeField] private GameObject _UI;
     [SerializeField] private GameObject _upgrades;
     [SerializeField] private GameObject _skins;
+    [SerializeField] private TMP_Text _bestTime;
+    [SerializeField] private TMP_Text _newTime;
 
     void Start()
     {
@@ -19,6 +22,14 @@ public class Menu : MonoBehaviour
         _UI.SetActive(false);
         _upgrades.SetActive(false);
         _skins.SetActive(false);
+
+        //Display timer
+        _bestTime.text = "" + PlayerPrefs.GetInt("timer", 0);
+    }
+
+    private void Update()
+    {
+        _newTime.text = "" + ((int)_basketLogic._timer);
     }
 
     public void Game()
