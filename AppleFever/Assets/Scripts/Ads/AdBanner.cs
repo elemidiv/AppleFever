@@ -8,6 +8,8 @@ public class AdBanner : MonoBehaviour
 {
         // These ad units are configured to always serve test ads.
     #if UNITY_ANDROID
+        //private string _adUnitId = "ca-app-pub-3836086117526701/3150522929";
+        //El de prueba
         private string _adUnitId = "ca-app-pub-3940256099942544/6300978111";
 #elif UNITY_IPHONE
       private string _adUnitId = "ca-app-pub-3940256099942544/2934735716";
@@ -41,8 +43,11 @@ public class AdBanner : MonoBehaviour
             _bannerView.Destroy();
         }
 
+        AdSize adaptiveSize =
+                AdSize.GetCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(AdSize.FullWidth);
+
         // Create a banner at bottom of the screen
-        _bannerView = new BannerView(_adUnitId, AdSize.Leaderboard, AdPosition.Top);
+        _bannerView = new BannerView(_adUnitId, adaptiveSize, AdPosition.Bottom);
 
         // Request and display an ad
         var adRequest = new AdRequest();

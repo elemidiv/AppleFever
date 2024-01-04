@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -49,10 +47,10 @@ public class SkinSystem : MonoBehaviour
         {
             if (_skins[i] == "1")
             {
-                _tCost[i].text = "Elegir";
+                _tCost[i].text = "Select";
             }
             else
-                _tCost[i].text = "$1000";
+                _tCost[i].text = "$1111";
         }
     }
 
@@ -71,9 +69,9 @@ public class SkinSystem : MonoBehaviour
                     _animator.runtimeAnimatorController = _animations[option];
                     _active[option] = "1";
                 }
-                else if (_basketLogic.Money >= 1000)
+                else if (_basketLogic.Money >= 1111)
                 {
-                    _basketLogic.Money -= 1000;
+                    _basketLogic.Money -= 1111;
 
                 }
                 break;
@@ -83,9 +81,9 @@ public class SkinSystem : MonoBehaviour
                     _animator.runtimeAnimatorController = _animations[option];
                     _active[option] = "1";
                 }
-                else if (_basketLogic.Money >= 1000)
+                else if (_basketLogic.Money >= 1111)
                 {
-                    _basketLogic.Money -= 1000;
+                    _basketLogic.Money -= 1111;
                     _skins[option] = "1";
                 }
                 break;
@@ -95,9 +93,9 @@ public class SkinSystem : MonoBehaviour
                     _animator.runtimeAnimatorController = _animations[option];
                     _active[option] = "1";
                 }
-                else if (_basketLogic.Money >= 1000)
+                else if (_basketLogic.Money >= 1111)
                 {
-                    _basketLogic.Money -= 1000;
+                    _basketLogic.Money -= 1111;
                     _skins[option] = "1";
                 }
                 break;
@@ -107,9 +105,9 @@ public class SkinSystem : MonoBehaviour
                     _animator.runtimeAnimatorController = _animations[option];
                     _active[option] = "1";
                 }
-                else if (_basketLogic.Money >= 1000)
+                else if (_basketLogic.Money >= 1111)
                 {
-                    _basketLogic.Money -= 1000;
+                    _basketLogic.Money -= 1111;
                     _skins[option] = "1";
                 }
                 break;

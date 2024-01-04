@@ -20,6 +20,15 @@ TextureImporter:
   - first:
       213: 6890289797660125240
     second: UI_Assets_5
+  - first:
+      213: 2180464291104061586
+    second: UI_Assets_6
+  - first:
+      213: -5703578217257022999
+    second: UI_Assets_7
+  - first:
+      213: -2275160820100057453
+    second: UI_Assets_8
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -126,7 +135,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 4
-        y: 56
+        y: 108
         width: 164
         height: 44
       alignment: 0
@@ -147,7 +156,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 176
-        y: 56
+        y: 108
         width: 44
         height: 44
       alignment: 0
@@ -168,7 +177,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 228
-        y: 56
+        y: 108
         width: 44
         height: 44
       alignment: 0
@@ -189,7 +198,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 4
-        y: 4
+        y: 56
         width: 164
         height: 44
       alignment: 0
@@ -210,7 +219,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 176
-        y: 4
+        y: 56
         width: 44
         height: 44
       alignment: 0
@@ -231,7 +240,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 228
-        y: 4
+        y: 56
         width: 44
         height: 44
       alignment: 0
@@ -243,6 +252,69 @@ TextureImporter:
       bones: []
       spriteID: 838a70d801a3f9f50800000000000000
       internalID: 6890289797660125240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Assets_6
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 4
+        width: 164
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2987eac58b0924e10800000000000000
+      internalID: 2180464291104061586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Assets_7
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 4
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e94dbb84d1d8d0b0800000000000000
+      internalID: -5703578217257022999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Assets_8
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 4
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 396bc07d9410d60e0800000000000000
+      internalID: -2275160820100057453
       vertices: []
       indices: 
       edges: []

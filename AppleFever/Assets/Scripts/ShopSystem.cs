@@ -78,6 +78,7 @@ public class ShopSystem : MonoBehaviour
         _cost4 = 100 + 200 * _currentLv4;
     }
 
+    /*  Functions for test
     public void MasDinero()
     {
         _basketLogic.Money += 1000;
@@ -98,6 +99,8 @@ public class ShopSystem : MonoBehaviour
         _upgradesSystem.SetRegeneration(_currentLv3, _basketLogic.Money);
         _upgradesSystem.SetResistance(_currentLv4, _basketLogic.Money);
     }
+    */
+
 
     //Functions called by buttons to increase the level
     public void UpSpeed()
